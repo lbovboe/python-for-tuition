@@ -45,6 +45,7 @@ def main():
     while running:
         if not pause:
             pyautogui.click(pyautogui.position())
+            # pyautogui.press('x')
             pyautogui.PAUSE = delay
     lis.stop()
 
