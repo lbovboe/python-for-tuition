@@ -26,7 +26,7 @@ def on_press(key):
 
 
 def display_controls():
-    print("// AutoClicker by iSayChris")
+    print("// AutoClicker by Paul")
     print("// - Settings: ")
     print("\t delay = " + str(delay) + ' sec' + '\n')
     print("// - Controls:")
