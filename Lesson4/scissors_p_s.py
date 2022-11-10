@@ -39,16 +39,16 @@ elif mode == 2:
             break
         if Player_value2 == 'scissors' and Player_value == 'paper':
             Player2_score +=1
-            print('Player2  wins ')
+            print('Player 2  wins ')
         elif Player_value2 == 'paper' and Player_value == 'stone':
             Player2_score +=1
-            print('Player2 wins ')
+            print('Player 2 wins ')
         elif Player_value2 == 'stone' and Player_value == 'scissors':
             Player2_score +=1
-            print('Player2 wins ')
+            print('Player 2 wins ')
         elif Player_value2 == Player_value:
             print('Draw')
         else:
             Player_score += 1
-            print('Player wins ')
+            print('Player 1 wins ')
     print('Player 1 Score :',Player_score,'Player 2 Score : ',Player2_score)
