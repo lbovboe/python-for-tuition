@@ -3,7 +3,7 @@ from pynput.keyboard import *
 
 #  ======== settings ========
 delay = 30  # in seconds
-delay2 = 1
+delay2 = 3
 resume_key = Key.f1
 pause_key = Key.f2
 exit_key = Key.esc
@@ -37,7 +37,6 @@ def display_controls():
     print("-----------------------------------------------------")
     print('Press F1 to start ...')
 
-
 def main():
     lis = Listener(on_press=on_press)
     lis.start()
@@ -45,13 +44,15 @@ def main():
     display_controls()
     while running:
         if not pause:
-            # pyautogui.click(pyautogui.position())
-            # pyautogui.PAUSE = delay2
-            for i in range(30):
-                pyautogui.press('s')
-                pyautogui.press('s')
-                pyautogui.PAUSE = delay2
-            pyautogui.press('e')
+            pyautogui.PAUSE = delay2
+            pyautogui.click(pyautogui.position())
+            pyautogui.click(pyautogui.position())
+            pyautogui.PAUSE = delay2
+            # for i in range(30):
+            #     pyautogui.press('s')
+            #     pyautogui.press('s')
+            #     pyautogui.PAUSE = delay2
+            # pyautogui.press('e')
     lis.stop()
 
 
