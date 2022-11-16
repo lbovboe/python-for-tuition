@@ -3,10 +3,13 @@ print('Select Mode 1 to play against AI')
 print('Select Mode 2 to play against Player')
 mode = int(input('Enter Game Mode 1/2: '))
 
+# create AI options 
 AI_options = ['scissors','paper','stone']
 AI_score = 0
 Player_score = 0  
 Player2_score = 0
+
+# play against AI
 if mode == 1:
     while True:
         AI_option = random.randint(0,2)
@@ -29,6 +32,8 @@ if mode == 1:
             Player_score += 1
             print('Player wins ')
     print('AI Score :',AI_score,'Player Score : ',Player_score)
+    
+# play against player
 elif mode == 2:
     while True:
         Player_value = input('Enter Player1 option : ').lower()
