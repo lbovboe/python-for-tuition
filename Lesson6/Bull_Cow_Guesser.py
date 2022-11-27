@@ -19,9 +19,6 @@ while True:
     if c <= 1:
         print('No duplicate found')
         break
-
-
-
 while True:
     bull_count = 0
     cow_count = 0 
