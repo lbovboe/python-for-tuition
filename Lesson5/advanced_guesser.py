@@ -2,12 +2,20 @@ import random
 word_pool = []
 
 # creating a pool of words
-while True:
-    word = input('Enter word for dictionary: ')
-    if word =='end':
-        break
-    word_pool.append(word)
+# while True:
+#     word = input('Enter word for dictionary: ')
+#     if word =='end':
+#         break
+#     word_pool.append(word)
+with open('dictionary.txt') as f:
+    while True:
+        lines = f.readline().rstrip()
+        if lines == '':
+            break
+        word_pool.append(lines)
+        
     
+
 while True:
     # choose a random word from the word_pool
     for i in range(100):
@@ -40,6 +48,7 @@ while True:
             # when user wants to key in the whole word
             if random_word == alphabet:
                 print('-------You Won ------')
+                print('The answer is : ', random_word)
                 break
                 
         
@@ -47,7 +56,9 @@ while True:
         # break when all the dash are filled up
         if '-' not in  guesser_container:
             print('-------You Won ------')
+            print('The answer is : ', random_word)
             break
         if lives == 0:
             print("----You Lost No more Lives -----")
+            print('The answer is : ', random_word)
             break
