@@ -1,4 +1,5 @@
 import random
+import time
 word_pool = []
 
 # creating a pool of words
@@ -28,9 +29,9 @@ while True:
     guesser_container = ['-' for i in range(word_length)]
     print(*guesser_container)
 
-    # set for 3 lives
+    # set for 5 lives
 
-    lives = 3
+    lives = 5
     while True:
         alphabet = input('Enter your guess alphabet/word : ')
         
@@ -49,7 +50,14 @@ while True:
             if random_word == alphabet:
                 print('-------You Won ------')
                 print('The answer is : ', random_word)
+                for i in range(3,0,-1):
+                    print('Next question in',i+1,'seconds')
+                    time.sleep(1)
                 break
+            else:
+                print('Wrong guess ! Guess Again.')
+                lives-=1
+
                 
         
         print(*guesser_container)
@@ -57,8 +65,14 @@ while True:
         if '-' not in  guesser_container:
             print('-------You Won ------')
             print('The answer is : ', random_word)
+            for i in range(3,0,-1):
+                print('Next question in',i+1,'seconds')
+                time.sleep(1)
             break
         if lives == 0:
             print("----You Lost No more Lives -----")
             print('The answer is : ', random_word)
+            for i in range(3,0,-1):
+                    print('Next question in',i+1,'seconds')
+                    time.sleep(1)
             break
