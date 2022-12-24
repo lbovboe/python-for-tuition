@@ -24,6 +24,12 @@ with open('dictionary.txt') as f:
         if lines == '':
             break
         word_pool.append(lines)
+# with open('test.txt') as f:
+#     while True:
+#         lines = f.readline().rstrip()
+#         if lines == '':
+#             break
+#         word_pool.append(lines)
         
     
 
@@ -52,6 +58,7 @@ while True:
     for key in keys:
         lives[key] = 3
     end = 0
+    end_win = False
     lives_temp = copy.deepcopy(lives)
     while True:
         keys = list(d.keys())
@@ -89,6 +96,7 @@ while True:
                         for i in range(3,0,-1):
                             print('Next question in',i+1,'seconds')
                             time.sleep(1)
+                        end_win = True
                         break
                     else:
                         print('Wrong guess ! Guess Again.')
@@ -98,18 +106,19 @@ while True:
 
                         
                 
-            # print(*guesser_container)
-            # break when all the dash are filled up
-            if '-' not in  guesser_container:
-                d[key] +=1
-                print('-------You Won ------')
-                print('The answer is : ', random_word)
-                print("Your Current Score is : ", d[key])
-                for i in range(3,0,-1):
-                    print('Next question in',i+1,'seconds')
-                    time.sleep(1)
-                end = len(d)
-                break
+                # print(*guesser_container)
+                # break when all the dash are filled up
+                if '-' not in  guesser_container:
+                    d[key] +=1
+                    print('-------You Won ------')
+                    print('The answer is : ', random_word)
+                    print("Your Current Score is : ", d[key])
+                    for i in range(3,0,-1):
+                        print('Next question in',i+1,'seconds')
+                        time.sleep(1)
+                    end_win = True
+
+                    break
             
             if lives[key] == 0:
                 end += 1
@@ -124,6 +133,10 @@ while True:
                 #         print('Next Person continue in',i+1,'seconds')
                 #         time.sleep(1)
                 break
+            if len(d) == 0:
+                break
+            if end_win == True:
+                break
         # print(end,len(d))
         if len(d) == 0:
             print('The answer is : ', random_word)
@@ -134,5 +147,6 @@ while True:
             d = copy.deepcopy(temp)
             lives = copy.deepcopy(lives_temp)
             break
-
+        if end_win == True:
+                break
     
