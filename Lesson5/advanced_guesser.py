@@ -18,18 +18,18 @@ print(d)
 #     if word =='end':
 #         break
 #     word_pool.append(word)
-with open('dictionary.txt') as f:
-    while True:
-        lines = f.readline().rstrip()
-        if lines == '':
-            break
-        word_pool.append(lines)
-# with open('test.txt') as f:
+# with open('dictionary.txt') as f:
 #     while True:
 #         lines = f.readline().rstrip()
 #         if lines == '':
 #             break
 #         word_pool.append(lines)
+with open('test.txt') as f:
+    while True:
+        lines = f.readline().rstrip()
+        if lines == '':
+            break
+        word_pool.append(lines)
         
     
 
@@ -93,6 +93,9 @@ while True:
                         d[key] +=1
                         print('The answer is : ', random_word)
                         print("Your Current Score is : ", d[key])
+                        temp[key] +=1
+                        d = copy.deepcopy(temp)
+                        lives = copy.deepcopy(lives_temp)
                         for i in range(3,0,-1):
                             print('Next question in',i+1,'seconds')
                             time.sleep(1)
@@ -113,6 +116,10 @@ while True:
                     print('-------You Won ------')
                     print('The answer is : ', random_word)
                     print("Your Current Score is : ", d[key])
+
+                    temp[key] +=1
+                    d = copy.deepcopy(temp)
+                    lives = copy.deepcopy(lives_temp)
                     for i in range(3,0,-1):
                         print('Next question in',i+1,'seconds')
                         time.sleep(1)
