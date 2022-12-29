@@ -18,21 +18,18 @@ print(d)
 #     if word =='end':
 #         break
 #     word_pool.append(word)
-# with open('dictionary.txt') as f:
-#     while True:
-#         lines = f.readline().rstrip()
-#         if lines == '':
-#             break
-#         word_pool.append(lines)
-with open('test.txt') as f:
+with open('dictionary.txt') as f:
     while True:
         lines = f.readline().rstrip()
         if lines == '':
             break
         word_pool.append(lines)
-        
-    
-
+# with open('test.txt') as f:
+#     while True:
+#         lines = f.readline().rstrip()
+#         if lines == '':
+#             break
+#         word_pool.append(lines)
 while True:
     # choose a random word from the word_pool
     temp = copy.deepcopy(d)
