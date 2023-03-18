@@ -2,7 +2,7 @@ import pyautogui
 from pynput.keyboard import *
 
 #  ======== settings ========
-delay = 1  # in seconds
+delay = 30  # in seconds
 delay2 = 1
 resume_key = Key.f1
 pause_key = Key.f2
@@ -44,40 +44,37 @@ def main():
     display_controls()
     while running:
         if not pause:
+            pyautogui.moveTo(763,292,0.3)
             pyautogui.PAUSE = delay2
             pyautogui.click(pyautogui.position())
-            pyautogui.click(pyautogui.position())
-            pyautogui.click(pyautogui.position())
             pyautogui.PAUSE = delay2
 
-            # x,y = pyautogui.position()
-            # print(x,y)
-           
-            # for i in range(4):
-            #     for i in range(10):
-            #         x += 30
+            x,y = pyautogui.position()
+            print(x,y)
 
-            #         pyautogui.moveTo(x,y,0.3)
-            #         pyautogui.click(pyautogui.position())
-            #         pyautogui.click(pyautogui.position())
-            #         pyautogui.PAUSE = delay2
-            #     # y += 10
-            # for i in range(4):
-            #     for i in range(10):
-            #         x -= 30
+            for i in range(3):
+                x+=130
+                pyautogui.moveTo(x,y,0.3)
+                pyautogui.PAUSE = delay2
+                pyautogui.click(pyautogui.position())
+                pyautogui.PAUSE = delay2
 
-            #         pyautogui.moveTo(x,y,0.3)
-            #         pyautogui.click(pyautogui.position())
-            #         pyautogui.click(pyautogui.position())
-            #         pyautogui.PAUSE = delay2
-               
+            pyautogui.moveTo(1414,552,0.3)
+            pyautogui.PAUSE = delay2
+            pyautogui.click(pyautogui.position())
+            pyautogui.PAUSE = delay2
+            pyautogui.moveTo(939,596,0.3)
+            pyautogui.PAUSE = delay2
+            pyautogui.click(pyautogui.position())
+            pyautogui.PAUSE = delay2
+            pyautogui.PAUSE = 10
+            pyautogui.moveTo(1116,585,0.3)
+            pyautogui.PAUSE = delay2
+            pyautogui.click(pyautogui.position())
+            pyautogui.PAUSE = delay2
+            pyautogui.PAUSE = 5
 
-            # pyautogui.PAUSE = delay2
-            # for i in range(30):
-            #     pyautogui.press('s')
-            #     pyautogui.press('s')
-            #     pyautogui.PAUSE = delay2
-            # pyautogui.press('e')
+
     lis.stop()
 
 
