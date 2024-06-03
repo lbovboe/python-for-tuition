@@ -3,7 +3,7 @@ from pynput.keyboard import *
 
 #  ======== settings ========
 delay = 1  # in seconds
-delay2 = 1
+delay2 = 30
 resume_key = Key.f1
 pause_key = Key.f2
 exit_key = Key.esc
