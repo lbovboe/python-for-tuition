@@ -6,7 +6,6 @@ delay = 2  # in seconds
 resume_key = Key.backspace
 pause_key = Key.tab
 exit_key = Key.esc
-
 # ==========================
 
 pause = True
@@ -30,7 +29,7 @@ def display_controls():
     print("// - Settings: ")
     print("\t delay = " + str(delay) + ' sec' + '\n')
     print("// - Controls:")
-    print("\t backspace = Resume")
+    print("\t alt = Resume")
     print("\t tab = Pause")
     print("\t Esc = Exit")
     print("-----------------------------------------------------")
@@ -38,17 +37,13 @@ def display_controls():
 
 def perform_actions():
     # Example actions: move mouse to a specific location and press 'E'
-    pyautogui.sleep(1)
-    # pyautogui.moveTo(300, 820)
-    # pyautogui.sleep(delay)
-    # pyautogui.click(pyautogui.position())  # Move mouse to position (100, 200)
+    pyautogui.sleep(0.7)
+    pyautogui.moveTo(510, 820)
+    pyautogui.sleep(0.7)
+    pyautogui.click(pyautogui.position())  # Move mouse to position (100, 200)
      # Press the 'E' key
-   
-    pyautogui.moveTo(400, 820)
-    pyautogui.sleep(1)
-    pyautogui.click(pyautogui.position())
-    # pyautogui.press('e') 
-
+    pyautogui.sleep(delay)
+    pyautogui.press('e') 
 def main():
     lis = Listener(on_press=on_press)
     lis.start()
