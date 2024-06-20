@@ -2,7 +2,7 @@ import pyautogui
 from pynput.keyboard import Listener, Key
 
 # ======== settings ========
-delay = 2  # in seconds
+delay = 1  # in seconds
 resume_key = Key.backspace
 pause_key = Key.tab
 exit_key = Key.esc
@@ -37,12 +37,11 @@ def display_controls():
 
 def perform_actions():
     # Example actions: move mouse to a specific location and press 'E'
-    pyautogui.sleep(delay)
     pyautogui.moveTo(510, 820)
-    pyautogui.sleep(delay)
+    pyautogui.sleep(0.5)
     pyautogui.click(pyautogui.position())  # Move mouse to position (100, 200)
      # Press the 'E' key
-    pyautogui.sleep(delay)
+    pyautogui.sleep(1)
     pyautogui.press('e') 
 
 def main():

@@ -38,10 +38,9 @@ def display_controls():
 
 def perform_actions():
     # Example actions: move mouse to a specific location and press 'E'
-    pyautogui.sleep(1)
    
-    pyautogui.moveTo(400, 820)
-    pyautogui.sleep(1)
+    
+    pyautogui.sleep(0.05)
     pyautogui.click(pyautogui.position())
     # pyautogui.press('e') 
 
