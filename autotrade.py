@@ -43,7 +43,7 @@ def perform_actions():
     pyautogui.moveTo(400, 820)
     pyautogui.sleep(1)
     pyautogui.click(pyautogui.position())
-    # pyautogui.press('e') 
+    # pyautogui.press('r') 
 
 def main():
     lis = Listener(on_press=on_press)

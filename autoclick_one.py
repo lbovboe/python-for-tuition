@@ -40,9 +40,9 @@ def perform_actions():
     # Example actions: move mouse to a specific location and press 'E'
    
     
-    pyautogui.sleep(0.05)
+    pyautogui.sleep(0.001)
     pyautogui.click(pyautogui.position())
-    # pyautogui.press('e') 
+    # pyautogui.press('r')     
 
 def main():
     lis = Listener(on_press=on_press)
