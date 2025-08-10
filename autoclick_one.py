@@ -34,13 +34,12 @@ def display_controls():
     print("\t tab = Pause")
     print("\t Esc = Exit")
     print("-----------------------------------------------------")
-    print('Press F1 to start ...')
-
+    print('Press backspace start ...')
 def perform_actions():
     # Example actions: move mouse to a specific location and press 'E'
    
     
-    pyautogui.sleep(0.001)
+    pyautogui.sleep(0.1)
     pyautogui.click(pyautogui.position())
     # pyautogui.press('r')     
 
