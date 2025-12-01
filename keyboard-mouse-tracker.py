@@ -128,8 +128,13 @@ class MouseKeyboardTracker:
         if self.recording:
             try:
                 key_name = key.char
+                if key_name is None:
+                    key_name = key.name
             except AttributeError:
                 key_name = key.name
+            
+            # Debug: print what key was detected
+            print(f"[DEBUG] Key pressed detected: '{key_name}' (type: {type(key_name).__name__})")
             
             event = {
                 'type': 'key_press',
@@ -143,6 +148,8 @@ class MouseKeyboardTracker:
         if self.recording:
             try:
                 key_name = key.char
+                if key_name is None:
+                    key_name = key.name
             except AttributeError:
                 key_name = key.name
             
@@ -156,6 +163,8 @@ class MouseKeyboardTracker:
         # Handle control keys (number keys 1-6)
         try:
             key_char = key.char
+            if key_char is None:
+                key_char = None  # Keep as None if char is None
         except AttributeError:
             key_char = None
         
@@ -280,26 +289,28 @@ class MouseKeyboardTracker:
                 
                 elif event['type'] == 'key_press':
                     try:
-                        if len(event['key']) == 1:
-                            keyboard_controller.press(event['key'])
+                        key_value = event['key']
+                        if key_value and isinstance(key_value, str) and len(key_value) == 1:
+                            keyboard_controller.press(key_value)
                         else:
                             # Handle special keys
-                            key = getattr(KeyboardKey, event['key'], None)
+                            key = getattr(KeyboardKey, key_value, None)
                             if key:
                                 keyboard_controller.press(key)
-                    except:
-                        pass  # Skip problematic keys
+                    except Exception as e:
+                        print(f"[WARNING] Failed to replay key press: {event.get('key')} - {e}")
                 
                 elif event['type'] == 'key_release':
                     try:
-                        if len(event['key']) == 1:
-                            keyboard_controller.release(event['key'])
+                        key_value = event['key']
+                        if key_value and isinstance(key_value, str) and len(key_value) == 1:
+                            keyboard_controller.release(key_value)
                         else:
-                            key = getattr(KeyboardKey, event['key'], None)
+                            key = getattr(KeyboardKey, key_value, None)
                             if key:
                                 keyboard_controller.release(key)
-                    except:
-                        pass  # Skip problematic keys
+                    except Exception as e:
+                        print(f"[WARNING] Failed to replay key release: {event.get('key')} - {e}")
                 
                 last_timestamp = event['timestamp']
         
