@@ -1,0 +1,42 @@
+{
+  "step1": {
+    "events": [
+      {
+        "type": "mouse_click",
+        "x": 1535.88671875,
+        "y": 834.9375,
+        "button": "left",
+        "pressed": true,
+        "timestamp": 0.06709790229797363
+      },
+      {
+        "type": "mouse_click",
+        "x": 1535.88671875,
+        "y": 834.9375,
+        "button": "left",
+        "pressed": false,
+        "timestamp": 8.579643964767456
+      },
+      {
+        "type": "key_press",
+        "key": "1",
+        "timestamp": 9.585722923278809
+      },
+      {
+        "type": "key_release",
+        "key": "1",
+        "timestamp": 9.764976978302002
+      }
+    ],
+    "repeat_count": 30,
+    "total_events": 4,
+    "duration": 9.764976978302002
+  },
+  "step2": {
+    "events": [],
+    "repeat_count": 1,
+    "total_events": 0,
+    "duration": 0
+  },
+  "created": "2025-12-06T23:40:42.078044"
+}
