@@ -1,4 +1,4 @@
-import random, turtle
+aimport random, turtle
 
 myscreen= turtle.Screen()
 
