@@ -8,7 +8,7 @@ Requirements:
 pip install pynput
 
 Usage:
-- Press 1 to start/stop recording (prompts for filename to save when stopped)
+- Press l to start/stop recording (prompts for filename to save when stopped)
 - Press 2 to replay recorded actions once
 - Press 3 to save current recording to a named file
 - Press 4 to load a saved recording from file (can then use option 5)
@@ -46,7 +46,7 @@ class MouseKeyboardTracker:
         print("Keyboard and Mouse Tracker")
         print("=" * 40)
         print("Controls:")
-        print("1 - Start / Stop Recording")
+        print("l - Start / Stop Recording")
         print("    (on stop, you will be asked for a filename to save)")
         print("2 - Replay Recording Once")
         print("3 - Save Recording to Named File")
@@ -59,7 +59,7 @@ class MouseKeyboardTracker:
 
     # ------------------------------------------------------------------
     # FEATURE 1: Record
-    # Start/stop recording with key 1.
+    # Start/stop recording with key l.
     # On stop, the user is immediately prompted for a filename so the
     # recording is saved right away (no need to press 3 separately).
     # ------------------------------------------------------------------
@@ -75,7 +75,7 @@ class MouseKeyboardTracker:
         self.start_time = time.time()
 
         print(f"\n[REC] RECORDING STARTED at {datetime.now().strftime('%H:%M:%S')}")
-        print("Press 1 again to stop recording...")
+        print("Press l again to stop recording...")
 
         # Start the mouse listener so mouse events are captured
         self.mouse_listener = MouseListener(
@@ -226,8 +226,8 @@ class MouseKeyboardTracker:
         if self.looping:
             return
 
-        # --- Key 1: Start / stop recording ---
-        if key_char == '1':
+        # --- Key l: Start / stop recording ---
+        if key_char == 'l':
             if self.recording:
                 self.stop_recording()
             else:
@@ -273,7 +273,7 @@ class MouseKeyboardTracker:
         Runs in a background thread so the main listener stays responsive.
         """
         if not self.events:
-            print("No events to replay! Press 1 to record or 4 to load a file.")
+            print("No events to replay! Press l to record or 4 to load a file.")
             return
 
         self.playing = True
@@ -396,7 +396,7 @@ class MouseKeyboardTracker:
         ignored while it is running to prevent accidental interruption.
         """
         if not self.events:
-            print("No events to replay! Press 1 to record or 4 to load a file.")
+            print("No events to replay! Press l to record or 4 to load a file.")
             return
 
         self.playing = True
